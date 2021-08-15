@@ -1,30 +1,40 @@
 <template>
   <div class="nav-bar">
-    <div class="left"><slot name="left"></slot></div>
-    <div class="center"><slot name="center"></slot></div>
-    <div class="right"><slot name="right"></slot></div>
+    <div class="left">
+      <slot name="left" />
+    </div>
+    <div class="center">
+      <slot name="center" />
+    </div>
+    <div class="right">
+      <slot name="right" />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name:'Navbar'
+  name: "NavBar"
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .nav-bar {
-  display: flex;
-  height: 44px;
   line-height: 44px;
+  display: flex;
+  width: 100%;
+  height: 44px;
   text-align: center;
-  box-shadow: 0 1px 10px rgba(100, 100, 100, .1);
+  box-shadow: 0 1px 1px rgba(100, 100, 100, 0.1);
 }
+
 .left,
 .right {
   width: 60px;
 }
+
 .center {
+  font-size: 16px;
   flex: 1;
 }
 </style>

@@ -1,24 +1,18 @@
 <template>
-  <div id="app">
-    <keep-alive exclude="Detail">
+  <div class="shop-container">
+    <keep-alive exclude="ProductDetail">
       <router-view />
     </keep-alive>
-    <main-tab-bar />
+    <!-- 控制tabBar显示和隐藏 -->
+    <tab-bar v-show="$store.getters.tabBarShow" />
   </div>
 </template>
 
 <script>
-  import MainTabBar from "./components/content/mainTabber/MainTabBar.vue";
-  export default {
-    name: "App",
-    components: {
-      MainTabBar
-    },
-  };
-</script>
+import TabBar from "@/components/common/tabbar/TabBar";
 
-<style>
-  /* style中引用css 必须要用@import */
-  @import "./assets/css/base.css";
-  /* cyh */
-</style>
+export default {
+  name: "App",
+  components: { TabBar }
+};
+</script>
